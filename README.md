@@ -11,7 +11,44 @@ npm install vue-tap-away
 ```
 
 ### Usage
-Coming soon
+```js
+import Vue from 'vue';
+import { TapAway, TapStop } from 'vue-tap-away';
 
-### Options
-Coming soon
+Vue.directive('tap-away', TapAway);
+Vue.directive('tap-stop', TapStop);
+```
+
+v-tap-away:
+```vue
+<template>
+    <div
+        v-if="show"
+        v-tap-away="hideMe"
+    >
+        Aw ye
+    </div>
+</template>
+
+<script>
+export default {
+    data: () => ({
+        show: true,
+    }),
+    methods: {
+        hideMe() {
+            this.show = false;
+        }
+    },
+};
+</script>
+```
+
+v-tap-stop:
+```vue
+<template>
+    <div v-tap-stop>
+        Taps on this element won't propagate!    
+    </div>
+</template>
+```
