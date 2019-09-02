@@ -5,7 +5,7 @@ import Hammer from './hammer';
 const hammer = new Hammer(document.documentElement);
 const bindings = [];
 
-hammer.on('tap', e => {
+hammer.on('tap press', e => {
     bindings.forEach(({ el, callback }) => {
         if (e.target !== el && ! e.srcEvent.propagationPath().includes(el)) {
             callback();
