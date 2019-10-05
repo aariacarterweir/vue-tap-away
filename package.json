@@ -1,6 +1,6 @@
 {
   "name": "vue-tap-away",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Reusable tap-away directive to detect taps/clicks outside an element. Works with touch devices!",
   "keywords": [
     "vue-tap-away",
@@ -8,6 +8,15 @@
     "click-away",
     "outside click"
   ],
+  "browserslist": [
+    "defaults",
+    "Safari 11",
+    "Safari 10"
+  ],
+  "scripts": {
+    "mix": "cross-env-shell node_modules/webpack/bin/webpack.js --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "install": "cross-env NODE_ENV=production yarn run mix"
+  },
   "homepage": "https://github.com/aariacarterweir/vue-tap-away",
   "bugs": "https://github.com/aariacarterweir/vue-tap-away/issues",
   "license": "MIT",
@@ -22,5 +31,10 @@
     "hammerjs": "^2.0.8",
     "lodash": "^4.17.15",
     "propagating-hammerjs": "^1.4.7"
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "laravel-mix": "^5.0.0",
+    "vue-template-compiler": "^2.6.10"
   }
 }
