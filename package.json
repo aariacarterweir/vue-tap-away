@@ -1,6 +1,6 @@
 {
   "name": "vue-tap-away",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Reusable tap-away directive to detect taps/clicks outside an element. Works with touch devices!",
   "keywords": [
     "vue-tap-away",
@@ -31,8 +31,6 @@
     "hammerjs": "^2.0.8",
     "lodash": "^4.17.15",
     "propagating-hammerjs": "^1.4.7"
-  },
-  "devDependencies": {
     "cross-env": "^6.0.3",
     "laravel-mix": "^5.0.0",
     "vue-template-compiler": "^2.6.10"
