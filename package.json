@@ -1,6 +1,6 @@
 {
   "name": "vue-tap-away",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Reusable tap-away directive to detect taps/clicks outside an element. Works with touch devices!",
   "keywords": [
     "vue-tap-away",

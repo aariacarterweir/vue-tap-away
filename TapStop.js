@@ -4,14 +4,22 @@ import Hammer from './hammer';
 const bindings = [];
 
 export default {
-    inserted(el) {
+    inserted(el, { value }) {
+        if (value === false) {
+            return;
+        }
+
         const hammer = new Hammer(el);
         const click = e => e.stopPropagation();
         hammer.on('tap press', e => e.stopPropagation());
         el.addEventListener('click', click);
         bindings.push({ el, hammer, click });
     },
-    unbind(el) {
+    unbind(el, { value }) {
+        if (value === false) {
+            return;
+        }
+
         const { hammer, click } = _.find(bindings, binding => binding.el === el);
         hammer.off('tap press');
         el.removeEventListener('click', click);

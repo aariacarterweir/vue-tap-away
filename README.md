@@ -53,6 +53,15 @@ v-tap-stop:
 </template>
 ```
 
+Also possible to have v-tap-stop conditionally apply:
+```vue
+<template>
+    <div v-tap-stop="false">
+        Taps on this element WILL propagate
+    </div>
+</template>
+```
+
 ### Note
 These directives use Hammerjs which disables the selection of text on the root html element by default. To turn this off, before you import this package, run this code:
 ```js
