@@ -17,7 +17,7 @@ hammer.on('tap press', e => {
         }
 
         // check if the path includes the directive targeted element
-        if (e.target !== el && ! path.includes(el)) {
+        if (e.target !== el && ! _.includes(path, el)) {
             callback();
         }
     });
