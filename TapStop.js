@@ -11,8 +11,12 @@ export default {
 
         const hammer = new Hammer(el);
         const click = e => e.stopPropagation();
-        hammer.on('tap press', e => e.stopPropagation());
+
+        // bind listeners
+        hammer.on('tap press', click);
         el.addEventListener('click', click);
+
+        // store binding
         bindings.push({ el, hammer, click });
     },
     unbind(el, { value }) {
@@ -20,9 +24,14 @@ export default {
             return;
         }
 
+        // find the binding
         const { hammer, click } = _.find(bindings, binding => binding.el === el);
-        hammer.off('tap press');
+
+        // unbind
+        hammer.off('tap press', click);
         el.removeEventListener('click', click);
+
+        // clear the binding from storage
         _.remove(bindings, binding => binding.el === el);
     },
 };
