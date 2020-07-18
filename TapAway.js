@@ -2,7 +2,7 @@ import _ from 'lodash';
 import 'event-propagation-path';
 import Hammer from './hammer';
 
-const hammer = new Hammer(document.documentElement);
+const hammer = new Hammer(document.documentElement, { touchAction: 'auto' });
 const bindings = [];
 
 hammer.on('tap press', e => {

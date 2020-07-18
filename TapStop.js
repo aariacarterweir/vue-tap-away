@@ -9,7 +9,7 @@ export default {
             return;
         }
 
-        const hammer = new Hammer(el);
+        const hammer = new Hammer(el, { touchAction: 'auto' });
         const click = e => e.stopPropagation();
 
         // bind listeners
