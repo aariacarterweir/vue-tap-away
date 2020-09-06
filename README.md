@@ -8,6 +8,9 @@ This plugin supports Vue version 2 and is written in ES6. You will need a transp
 ```
 yarn add vue-tap-away
 npm install vue-tap-away
+
+// This package requires: hammerjs, lodash, event-propagation-path and propagating-hammerjs
+yarn add hammerjs lodash event-propagation-path propagating-hammerjs
 ```
 
 ### Usage

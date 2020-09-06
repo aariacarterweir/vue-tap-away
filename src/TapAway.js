@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { remove, includes } from 'lodash';
 import 'event-propagation-path';
 import Hammer from './hammer';
 
@@ -17,7 +17,7 @@ hammer.on('tap press', e => {
         }
 
         // check if the path includes the directive targeted element
-        if (e.target !== el && ! _.includes(path, el)) {
+        if (e.target !== el && ! includes(path, el)) {
             callback();
         }
     });
@@ -28,6 +28,6 @@ export default {
         bindings.push({ el, callback });
     },
     unbind(el) {
-        _.remove(bindings, binding => binding.el === el);
+        remove(bindings, binding => binding.el === el);
     },
 };

@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { find, remove } from 'lodash';
 import Hammer from './hammer';
 
 const bindings = [];
@@ -25,13 +25,13 @@ export default {
         }
 
         // find the binding
-        const { hammer, click } = _.find(bindings, binding => binding.el === el);
+        const { hammer, click } = find(bindings, binding => binding.el === el);
 
         // unbind
         hammer.off('tap press', click);
         el.removeEventListener('click', click);
 
         // clear the binding from storage
-        _.remove(bindings, binding => binding.el === el);
+        remove(bindings, binding => binding.el === el);
     },
 };
